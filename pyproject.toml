@@ -1,0 +1,29 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "heart_failure_prediction"
+version = "0.0.1"
+description = "Predict whether a patient is prone to heart failure depending on several attributes."
+authors = [{ name = "PureStupid" }]
+license = { file = "LICENSE" }
+readme = "README.md"
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+]
+requires-python = "~=3.12"
+
+[tool.ruff.lint]
+select = ["ALL"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy" # Accepts: "google", "numpy", or "pep257".
+
+[tool.pyright]
+exclude = ["**/node_modules", "**/__pycache__", "**/build"]
+typeCheckingMode = "standard"
+
+[tool.pytest.ini_options]
+addopts = "--cov=heart_failure_prediction"

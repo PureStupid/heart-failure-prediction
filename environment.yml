@@ -1,0 +1,28 @@
+name: heart-failure-prediction
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - dvc
+  - ipython
+  - jupyterlab
+  - loguru
+  - matplotlib
+  - mkdocs
+  - notebook
+  - numpy
+  - pandas
+  - pip
+  - pre-commit
+  - pyright[nodejs]
+  - pytest
+  - pytest-cov
+  - python-dotenv
+  - rich
+  - ruff
+  - scikit-learn
+  - scipy
+  - seaborn
+  - streamlit
+  - pip:
+      - -e .

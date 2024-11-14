@@ -1,0 +1,85 @@
+version: "3"
+
+vars:
+  lib: heart-failure-prediction
+  python_version: 3.12
+  python_interpreter: python
+
+tasks:
+  setup:
+    desc: Set up Anaconda environment
+    cmds:
+      - conda env create --name {{.lib}}
+
+  install:
+    desc: Install dependencies
+    cmds:
+      - conda env update --name {{.lib}} --prune
+
+  clean:
+    desc: Clean up artifacts
+    summary: Delete all build, test, coverage, and Python artifacts.
+    cmds:
+      - find . -type f -name "*.py[co]" -delete
+      - find . -type d -name "__pycache__" -delete
+
+  pre-commit-all:
+    desc: Run pre-commit hooks on all files
+    cmds:
+      - pre-commit run --all-files
+
+  lint:
+    desc: Run linter
+    summary: |
+      Run linting checks.
+      Lints all files using the Ruff linter.
+    cmds:
+      - ruff check
+
+  lint-fix:
+    desc: Run linter with auto-fix
+    summary: |
+      Run linting checks with auto-fix.
+      Lints all files using the Ruff linter, and fix any fixable errors.
+    cmds:
+      - ruff check --fix
+
+  format:
+    desc: Run formatter
+    summary: |
+      Run formatting.
+      Formats source code using the Ruff formatter.
+    cmds:
+      - ruff format
+
+  format-check:
+    desc: Run format checker
+    summary: |
+      Run formatting checks.
+      Checks source code formatting using the Ruff formatter.
+    cmds:
+      - ruff format --check
+
+  typecheck:
+    desc: Run type-checker
+    summary: |
+      Run static type checks.
+      Type-checks using Pyright.
+    cmds:
+      - pyright
+
+  typecheck-stats:
+    desc: Run type-checker with stats
+    summary: |
+      Run static type checks with stats.
+      Type-checks using Pyright, and shows stats.
+    cmds:
+      - pyright --stats
+
+  test:
+    desc: Run tests
+    summary: |
+      Run all test cases.
+      Tests using pytest.
+    cmds:
+      - pytest
