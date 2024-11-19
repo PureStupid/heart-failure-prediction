@@ -1,7 +1,7 @@
 """Configuration for the project.
 
 This module contains the configuration for the project.
-It includes the paths to the data directories and the models directory.
+It includes the paths to the data, models, and reports directories.
 """
 
 import logging
@@ -47,7 +47,6 @@ logger.configure(
 
 # Paths
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
-logger.info(f"{PROJECT_ROOT=}")
 
 DATA_DIRECTORY = PROJECT_ROOT / "data"
 RAW_DATA_DIRECTORY = DATA_DIRECTORY / "raw"
