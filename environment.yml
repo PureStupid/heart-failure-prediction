@@ -1,12 +1,12 @@
 name: heart-failure-prediction
 channels:
   - conda-forge
-  - defaults
 dependencies:
   - python=3.12
   - dvc
   - ipython
   - jupyterlab
+  - jupytext
   - loguru
   - matplotlib
   - mkdocs

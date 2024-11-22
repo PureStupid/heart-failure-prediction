@@ -16,6 +16,7 @@ classifiers = [
 requires-python = "~=3.12"
 
 [tool.ruff.lint]
+exclude = ["**/scripts/**"]
 select = [
   # pycodestyle
   "E",
@@ -36,7 +37,12 @@ convention = "numpy" # Accepts: "google", "numpy", or "pep257".
 
 [tool.pyright]
 exclude = ["**/node_modules", "**/__pycache__", "**/build"]
+ignore = ["**/scripts/**"]
 typeCheckingMode = "standard"
 
 [tool.pytest.ini_options]
 addopts = "--cov=heart_failure_prediction"
+
+[tool.jupytext.formats]
+"notebooks/" = "ipynb"
+"scripts/" = "py:percent"
