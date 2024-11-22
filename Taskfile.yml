@@ -23,8 +23,19 @@ tasks:
       - find . -type f -name "*.py[co]" -delete
       - find . -type d -name "__pycache__" -delete
 
+  pre-commit:
+    desc: Run pre-commit hooks
+    summary: |
+      Run pre-commit hooks.
+      Runs all pre-commit hooks.
+    cmds:
+      - pre-commit run
+
   pre-commit-all:
     desc: Run pre-commit hooks on all files
+    summary: |
+      Run pre-commit hooks on all files.
+      Runs all pre-commit hooks on all files in the repository.
     cmds:
       - pre-commit run --all-files
 
