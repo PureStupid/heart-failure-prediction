@@ -7,6 +7,7 @@ It includes the paths to the data, models, and reports directories.
 import logging
 from pathlib import Path
 
+import pandas as pd
 from dotenv import load_dotenv
 from loguru import logger
 from rich.console import Console
@@ -44,6 +45,9 @@ logger.configure(
         },
     ],
 )
+
+# Set the default plotting backend to Plotly
+pd.options.plotting.backend = "plotly"
 
 # Paths
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
