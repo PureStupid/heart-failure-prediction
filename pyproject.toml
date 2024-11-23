@@ -30,6 +30,12 @@ select = [
   "SIM",
   # isort
   "I",
+  # pydocstyle
+  "D",
+  # NumPy-specific
+  "NPY",
+  # pandas-vet
+  "PD",
 ]
 
 [tool.ruff.lint.pydocstyle]
