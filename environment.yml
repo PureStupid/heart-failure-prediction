@@ -3,7 +3,7 @@ channels:
   - conda-forge
 dependencies:
   - python=3.12
-  - dvc
+  - dvc-s3
   - ipython
   - jupyterlab
   - jupytext
