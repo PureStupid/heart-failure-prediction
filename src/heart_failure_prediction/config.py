@@ -1,10 +1,11 @@
-"""Configuration for the project.
+"""Configuration module.
 
-This module contains the configuration for the project.
+This module contains useful variables and configuration for the project.
 It includes the paths to the data, models, and reports directories.
 """
 
 import logging
+import os
 from pathlib import Path
 
 import pandas as pd
@@ -48,6 +49,12 @@ logger.configure(
 
 # Set the default plotting backend to Plotly
 pd.options.plotting.backend = "plotly"
+
+# DVC Remote Configuration
+DVC_REMOTE_CONFIG = {
+    "access_key_id": os.getenv("ACCESS_KEY_ID"),
+    "secret_access_key": os.getenv("SECRET_ACCESS_KEY"),
+}
 
 # Paths
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
