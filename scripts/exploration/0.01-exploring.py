@@ -25,13 +25,13 @@ import pandas as pd
 import seaborn as sns
 from matplotlib import pyplot as plt
 
-from heart_failure_prediction.config import RAW_DATA_DIRECTORY
+from heart_failure_prediction.dataset import load_raw_data
 
 # %% [markdown]
 # ## Dataset Information
 
 # %%
-raw_data: pd.DataFrame = pd.read_csv(RAW_DATA_DIRECTORY / "heart.csv")
+raw_data: pd.DataFrame = load_raw_data()
 
 raw_data
 
