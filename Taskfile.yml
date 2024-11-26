@@ -53,7 +53,7 @@ tasks:
       Run linting checks with auto-fix.
       Lints all files using the Ruff linter, and fix any fixable errors.
     cmds:
-      - ruff check --fix
+      - ruff check --fix --show-fixes
 
   format:
     desc: Run formatter
@@ -94,3 +94,21 @@ tasks:
       Tests using pytest.
     cmds:
       - pytest
+
+  check-all:
+    desc: Run all checks and tests
+    summary: Run lint, typecheck, format-check and test tasks.
+    cmds:
+      - task: lint
+      - task: typecheck
+      - task: format-check
+      - task: test
+
+  check-all-fix:
+    desc: Run all checks and tests with auto-fix
+    summary: Run lint-fix, typecheck, format and test tasks.
+    cmds:
+      - task: lint-fix
+      - task: typecheck
+      - task: format
+      - task: test
