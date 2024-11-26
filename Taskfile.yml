@@ -51,7 +51,7 @@ tasks:
     desc: Run linter with auto-fix
     summary: |
       Run linting checks with auto-fix.
-      Lints all files using the Ruff linter, and fix any fixable errors.
+      Lints all files using the Ruff linter, and fixes any fixable errors.
     cmds:
       - ruff check --fix --show-fixes
 
