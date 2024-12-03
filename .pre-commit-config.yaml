@@ -12,6 +12,11 @@ repos:
       - id: trailing-whitespace
       - id: mixed-line-ending
 
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.21.2
+    hooks:
+      - id: gitleaks
+
   - repo: https://github.com/mwouts/jupytext
     rev: v1.16.4b
     hooks:
@@ -19,7 +24,7 @@ repos:
         args: [--sync]
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.8.0
+    rev: v0.8.1
     hooks:
       # Run the linter.
       - id: ruff
